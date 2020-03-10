@@ -7,7 +7,7 @@ import com.xuwen.demo.bean.response.CommonResponseBean;
 import com.xuwen.demo.util.HttpResponse;
 import com.xuwen.demo.util.HttpSendUtils;
 import com.xuwen.demo.util.JsonUtil;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 /**
  * 单点登录sdk
- * 本地测试时候需配置host（例如127.0.0.1 xuwen.autohome.com.cn），这样才能保证可将Cookie写入domain（autohome.com.cn），
+ * 本地测试时候需配置host（例如127.0.0.1 xuwen.com.cn），这样才能保证可将Cookie写入domain（xuwen.com.cn），
  * @author XuWen
  * @created 2018-04-17 9:17.
  */
@@ -41,22 +41,22 @@ public class SsoSdk {
     /**
      * 验证是否登陆请求地址
      */
-    private static final String VALIDATE_URL = "http://sso.c.bdp.autohome.com.cn/user/account/validateLogin";
+    private static final String VALIDATE_URL = "http://sso.c.bdp.xuwen.com.cn/user/account/validateLogin";
 
     /**
      * 根据uid获取用户基础信息地址
      */
-    private static final String GET_USER_BASE_URL = "http://sso.c.bdp.autohome.com.cn/user/account/baseInfoByUid/";
+    private static final String GET_USER_BASE_URL = "http://sso.c.bdp.xuwen.com.cn/user/account/baseInfoByUid/";
 
     /**
      * 根据token获取用户基础信息地址
      */
-    private static final String GET_USER_BASE_BY_TOKEN = "http://sso.c.bdp.autohome.com.cn/user/account/baseInfoByToken/";
+    private static final String GET_USER_BASE_BY_TOKEN = "http://sso.c.bdp.xuwen.com.cn/user/account/baseInfoByToken/";
 
     /**
      * 退出登录
      */
-    private static final String LOGOUT_URL = "http://sso.c.bdp.autohome.com.cn/user/account/logout";
+    private static final String LOGOUT_URL = "http://sso.c.bdp.xuwen.com.cn/user/account/logout";
 
     /**
      * 加个sign字段做防刷验证
@@ -66,7 +66,7 @@ public class SsoSdk {
     /**
      * 统一登录页地址
      */
-    private static final String LOGIN_URL = "http://c.bdp.autohome.com.cn/login/login.html?serviceUrl=";
+    private static final String LOGIN_URL = "http://c.bdp.xuwen.com.cn/login/login.html?serviceUrl=";
 
     /**
      * 验证是否登录（包含了登陆超时验证）

@@ -1,6 +1,6 @@
-//package com.autohome.datacentersso.config;
+//package com.xuwen.datacentersso.config;
 //
-//import com.autohome.datacentersso.filter.SsoFilter;
+//import com.xuwen.datacentersso.filter.SsoFilter;
 //import org.springframework.boot.web.servlet.FilterRegistrationBean;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
-//package com.autohome.datacentersso.interceptor;
+//package com.xuwen.datacentersso.interceptor;
 //
-//import com.autohome.datacentersso.constant.CommonConstant;
-//import com.autohome.datacentersso.util.RedisUtil;
+//import com.xuwen.datacentersso.constant.CommonConstant;
+//import com.xuwen.datacentersso.util.RedisUtil;
 //import org.apache.commons.lang.StringUtils;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Component;

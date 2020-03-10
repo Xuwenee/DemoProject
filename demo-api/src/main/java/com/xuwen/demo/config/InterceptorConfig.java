@@ -1,6 +1,6 @@
-//package com.autohome.datacentersso.config;
+//package com.xuwen.datacentersso.config;
 //
-//import com.autohome.datacentersso.interceptor.SsoInterceptor;
+//import com.xuwen.datacentersso.interceptor.SsoInterceptor;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
