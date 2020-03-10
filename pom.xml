@@ -17,7 +17,8 @@
     <modules>
         <module>demo-api</module>
         <module>demo-client</module>
-    </modules>
+		<module>demo-algorithm</module>
+	</modules>
 
     <name>demo-project</name>
     <description>demo-project</description>
