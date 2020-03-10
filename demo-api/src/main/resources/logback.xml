@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="10 seconds">
+    <property name="LOG_FILE" value="${sso_log_path}"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="com.xuwen.demo.dao.mapper" level="DEBUG" />
+
+    <!--文件输出的格式设置 -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 文件输出的日志 的格式 -->
+        <encoder>
+            <pattern>
+                %5p [%t] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+            </pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集，防止中文乱码 -->
+        </encoder>
+
+        <!-- 配置日志所生成的目录以及生成文件名的规则 在logs/mylog-2016-10-31.0.log -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}/appLog/log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 最大64MB 超过最大值，会重新建一个文件-->
+                <maxFileSize>64 MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <!-- Safely log to the same file from multiple JVMs. Degrades performance! -->
+        <prudent>true</prudent>
+    </appender>
+
+    <!--控制台输出的格式设置 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 控制台输出的日志 的格式 -->
+        <encoder>
+            <pattern>%5p [%t] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+        <!-- 只是DEBUG级别以上的日志才显示 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+    <!-- 异步输出 -->
+    <appender name ="ASYNC-FILE" class= "ch.qos.logback.classic.AsyncAppender">
+        <!-- 设置非阻塞模式 -->
+        <neverBlock>true</neverBlock>
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold >0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>512</queueSize>
+        <!-- 添加附加的appender,最多只能添加一个 -->
+        <appender-ref ref ="FILE"/>
+    </appender>
+
+
+
+    <!-- 异步输出 -->
+    <appender name ="ASYNC-STDOUT" class= "ch.qos.logback.classic.AsyncAppender">
+        <!-- 设置非阻塞模式 -->
+        <neverBlock>true</neverBlock>
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold >0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>512</queueSize>
+        <!-- 行数打印 -->
+        <includeCallerData>true</includeCallerData>
+        <!-- 添加附加的appender,最多只能添加一个 -->
+        <appender-ref ref ="STDOUT"/>
+    </appender>
+
+    <!-- Enable FILE and STDOUT appenders for all log messages. By default,
+         only log at level INFO and above. -->
+
+    <root level="INFO">
+        <appender-ref ref="ASYNC-FILE" />
+        <appender-ref ref="ASYNC-STDOUT" />
+    </root>
+</configuration>
