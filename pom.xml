@@ -53,7 +53,7 @@
 		<mysal.connect.version>5.1.44</mysal.connect.version>
 
 		<httpcore.version>4.4.8</httpcore.version>
-		<httpclient.version>4.5.3</httpclient.version>
+		<httpclient.version>4.5.13</httpclient.version>
 		<httpmime.version>4.5.3</httpmime.version>
     </properties>
 	
