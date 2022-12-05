@@ -40,7 +40,7 @@
 		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
 		<targetXMLPackage>mapper</targetXMLPackage>
 		<jsr311.api.version>1.1.1</jsr311.api.version>
-		<commons.net.version>3.1</commons.net.version>
+		<commons.net.version>3.9.0</commons.net.version>
 		<commons.lang3.version>3.4</commons.lang3.version>
 		<commons.httpclient.version>3.1</commons.httpclient.version>
 
